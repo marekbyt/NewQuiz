@@ -29,25 +29,6 @@ public class ExerciseController {
     return age == null ? "Czesc " + name : "Czesc " + " , masz " + age + " lat";
     }
 
-        @GetMapping("/calculator")
-    @ResponseBody
-    public String calculator(@RequestParam double a,
-                             @RequestParam double b,
-                             @RequestParam (defaultValue = "add") String op){
-        switch (op){
-            case"add":
-                return String.format("%f + %f = %f", a, b, a+b);
 
-            case "sub":
-                return String.format("%f - %f = %f", a, b, a - b);
-            case "mul":
-                return String.format("%f * %f = %f", a, b, a * b);
-            case "div":
-                return String.format("%f / %f = %f" ,a ,b , a / b );
-            default:
-                return "Brak wyników nieznany operator";
-        }
-
-    }
 
 }
